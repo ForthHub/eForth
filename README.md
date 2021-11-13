@@ -42,7 +42,7 @@ go build .
 # Example3: creating a new word
 # : Name ( input - output ) commands ;
 0 0 0 0 ok> : squared ( n - n*n ) dup dup * swap drop ;
-: square dup dup * ;
+: square dup dup * swap drop ;
  0 0 0 0 ok>4 square
 4 square
  0 0 0 10 ok>
@@ -51,7 +51,7 @@ go build .
 DECIMAL
 0 0 0 16 ok>
 
-# Exit with copy of modified program memory, where * is the data-time stamp.  This can be reused to compile an updated memorey map.
+# Exit will copy of modified program memory `Data[4096]`, where * is the data-time stamp.  This can be reused to compile an updated memorey map.
 0 0 0 0 ok> bye
 bye
  wrote *_rom.txt
